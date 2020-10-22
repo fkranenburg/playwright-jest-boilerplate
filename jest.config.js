@@ -5,6 +5,9 @@ module.exports = {
   testEnvironmentOptions: {
     "jest-playwright": {
       browsers: ["chromium"],
+      contextOptions: {
+        acceptDownloads: true,
+      },
     },
   },
 };

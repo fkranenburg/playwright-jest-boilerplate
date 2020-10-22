@@ -1,7 +1,7 @@
+var merge = require("lodash.merge");
 let config = require("./jest.config");
-
-config = {
-  ...config,
+const debugConfig = {};
+merge(debugConfig, config, {
   testEnvironmentOptions: {
     "jest-playwright": {
       launchOptions: {
@@ -11,6 +11,6 @@ config = {
     },
   },
   setupFilesAfterEnv: [...config.setupFilesAfterEnv, "./jest-debug.setup.js"],
-};
+});
 
-module.exports = config;
+module.exports = debugConfig;

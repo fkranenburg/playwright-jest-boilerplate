@@ -1,4 +1,18 @@
 describe("TodoMVC", () => {
+  test("Demo", async () => {
+    // Open new page
+    const page = await context.newPage();
+
+    // Go to https://github.com/microsoft/playwright/releases
+    await page.goto("https://github.com/microsoft/playwright/releases");
+
+    // Click text="Source code"
+    const [download] = await Promise.all([
+      page.waitForEvent("download"),
+      page.click('text="Source code"'),
+    ]);
+    await download.saveAs("./release.zip");
+  });
   it("should let users manage to-do list", async () => {
     // Open new page
     const page = await context.newPage();

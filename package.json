@@ -16,6 +16,7 @@
     "jest": "^26.5.3",
     "jest-junit": "^12.0.0",
     "jest-playwright-preset": "^1.3.1",
+    "lodash.merge": "^4.6.2",
     "playwright": "^1.5.0",
     "playwright-cli": "^0.150.0",
     "prettier": "^2.1.2"
