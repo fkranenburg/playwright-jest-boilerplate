@@ -1,21 +1,8 @@
+import initializeRecorder from "playwright-session";
+
 describe("TodoMVC", () => {
-  test("Demo", async () => {
-    // Open new page
-    const page = await context.newPage();
-
-    // Go to https://github.com/microsoft/playwright/releases
-    await page.goto("https://github.com/microsoft/playwright/releases");
-
-    // Click text="Source code"
-    const [download] = await Promise.all([
-      page.waitForEvent("download"),
-      page.click('text="Source code"'),
-    ]);
-    await download.saveAs("./release.zip");
-  });
   it("should let users manage to-do list", async () => {
-    // Open new page
-    const page = await context.newPage();
+    const { page } = await initializeRecorder(browser, "session-events");
 
     // Go to http://todomvc.com/examples/react/#/
     await page.goto("http://todomvc.com/examples/react/#/");
@@ -26,7 +13,7 @@ describe("TodoMVC", () => {
     // Fill input[placeholder="What needs to be done?"]
     await page.fill(
       'input[placeholder="What needs to be done?"]',
-      "Design a prototype"
+      "Design prototypes"
     );
 
     // Press Enter
