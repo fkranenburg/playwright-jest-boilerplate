@@ -9,7 +9,7 @@ describe("TodoMVC", () => {
     // Fill input[placeholder="What needs to be done?"]
     await page.fill(
       'input[placeholder="What needs to be done?"]',
-      "Design prototypes"
+      "Design a prototype"
     );
 
     // Press Enter
