@@ -1,5 +1,3 @@
-import initializeRecorder from "playwright-session";
-
 describe("TodoMVC", () => {
   it("should let users manage to-do list", async () => {
     const { page } = await initializeRecorder(browser, "session-events");
