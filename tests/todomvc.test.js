@@ -1,7 +1,5 @@
 describe("TodoMVC", () => {
   it("should let users manage to-do list", async () => {
-    const { page } = await initializeRecorder(browser, "session-events");
-
     // Go to http://todomvc.com/examples/react/#/
     await page.goto("http://todomvc.com/examples/react/#/");
 
