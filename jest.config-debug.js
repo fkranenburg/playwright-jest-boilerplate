@@ -4,6 +4,11 @@ module.exports = {
   setupFilesAfterEnv: ["expect-playwright"],
   testEnvironmentOptions: {
     "jest-playwright": {
+      launchOptions: {
+        headless: false,
+        devtools: true,
+        slowMo: 500,
+      },
       browsers: ["chromium"],
       contextOptions: {
         acceptDownloads: true,
