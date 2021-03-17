@@ -10,8 +10,6 @@ describe("naam van test", () => {
             "apps"
         );
 
-        console.log(jestPlaywright)
-
         // Press Enter
         await page.press(
             '[placeholder="Search CaseWare International Inc."]',
